@@ -1,9 +1,9 @@
 set ns [new Simulator]
-set tf [open prg6.tr w]
+set tf [open prg7.tr w]
 $ns trace-all $tf
 set topo [new Topography]
 $topo load_flatgrid 1000 1000
-set nf [open prg6.nam w]
+set nf [open prg7.nam w]
 $ns namtrace-all-wireless $nf 1000 1000
 
 $ns node-config -adhocRouting DSDV \
@@ -66,8 +66,7 @@ $ns at 190 "$n1 setdest 70 70 15"
 proc finish {} {
 global ns nf tf
 $ns flush-trace
-exec nam prg6.nam
-&
+exec nam prg7.nam &
 close $tf
 exit 0
 }
